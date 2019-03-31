@@ -1,0 +1,2 @@
+# I've joined the #100DaysOfCode Challenge
+This is the repository for any new coding projects I build during the challenge. Find my process in my log: https://github.com/gitfrosh/100-days-of-code/blob/master/r1-log.md!
