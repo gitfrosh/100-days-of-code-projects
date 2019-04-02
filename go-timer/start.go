@@ -40,7 +40,15 @@ func hello() {
 // then calls http.ListenAndServe, specifying that it should listen on port 8080
 // ListenAndServe always returns an error, since it only returns when an unexpected
 // error occurs. In order to log that error we wrap the function call with log.Fatal
+// func main() {
+//     http.HandleFunc("/", handler)
+//     log.Fatal(http.ListenAndServe(":8080", nil))
+// }
+
 func main() {
-    http.HandleFunc("/", handler)
-    log.Fatal(http.ListenAndServe(":8080", nil))
-}
+    fs := http.FileServer(http.Dir("static"))
+    http.Handle("/", fs)
+  
+    log.Println("Listening...")
+    http.ListenAndServe(":3000", nil)
+  }
