@@ -8,7 +8,7 @@ The code base provides a minimal starter kit / boilperplate to begin a new React
 * <a href="https://github.com/facebook/create-react-app" target="_blank">create-react-app</a>: The project is built on this famous framework with no build configuration. Just start hacking!
 * <a href="https://github.com/timarney/react-app-rewired" target="_blank">react-app-rewired</a>: Make decorators (@) work and tweak the create-react-app webpack config(s) without using 'eject'.
 * <a href="https://ant.design/" target="_blank">Ant Design</a>: The beautiful AntD UI Framework is already included.
-* <a href="https://redux.js.org/" target="_blank">Redux</a>: Scalable states: Manage them in stores and control them with reducers and actions.
+* <a href="https://redux.js.org/" target="_blank">Redux and Redux-Logger</a>: Scalable states: Manage them in stores and control them with reducers and actions.
 * <a href="https://www.npmjs.com/package/react-router-dom" target="_blank">react-router-dom</a>: Routing made easy.
 
 ## installation
