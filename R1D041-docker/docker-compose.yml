@@ -1,0 +1,44 @@
+version: '3.6'
+
+services:
+  # Backend API
+  smart-brain-api:
+    container_name: backend
+    # image: node:8.11.1
+    # build from Dockerfile (./) or specify here
+    build: ./
+    command: npm start
+    working_dir: /usr/src/smart-brain-api
+    environment:
+      #
+      #
+      # or we could use a postgres connection uri
+      POSTGRES_USER: sally
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: super-db
+      # name of service!! ("postgres")
+      POSTGRES_HOST: postgres
+    # links is not necessary in later Docker versions  
+    links:
+      # again: name of service!!
+      - postgres
+    ports:
+      - "3000:3000"
+    volumes:
+      # map host directory to container folder, so
+      # changes on original will be watched
+      - ./:/usr/src/smart-brain-api 
+  #Postgres
+  postgres:
+    # we don't need this since image is specified
+    # container_name: postgres
+    image: postgres:9.4
+    environment:
+      POSTGRES_USER: sally
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: super-db
+      POSTGRES_HOST: postgres
+    # PostgreSQL installed on your local machine 
+    # and it's running, occupying the port 5432.
+    ports:
+      - "5433:5432"
