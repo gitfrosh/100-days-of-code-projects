@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var aws = require("aws-sdk");
 var ses = new aws.SES({
@@ -16,11 +16,12 @@ exports.newuser = function(event, context) {
     Message: {
       Body: {
         Text: {
-          Data: "bdlfdsf"
+          Data:
+            "I'm just a quick notice that somebody registered for a new account on *the one api*."
         }
       },
       Subject: {
-        Data: "Ses Test Email"
+        Data: "New LotR API User :)"
       }
     },
     Source: "ueberdiespree@gmail.com"
