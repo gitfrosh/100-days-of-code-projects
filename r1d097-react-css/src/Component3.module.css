@@ -1,0 +1,12 @@
+.error {
+    color: red;
+  }
+
+.pretty {
+    background: grey
+}
+
+.superpretty {
+    composes: pretty;
+    color: yellow;
+  }
