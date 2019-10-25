@@ -1,7 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Comp1 from './Comp1';
+import { Comp1 } from './Comp1';
+import Comp2 from './Comp2';
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
         </a>
       </header>
       <Comp1 />
+      <Comp2 />
     </div>
   );
 }
