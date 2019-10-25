@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 
+const OuterContext = React.createContext({ aPropOnContext: "hello prop!!" });
+
+
 function Comp1() {
   // Declare a new state variable, which we'll call "count"
   const [count, setCount] = useState(0);
@@ -16,11 +19,13 @@ function Comp1() {
   });
 
   return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
-    </div>
+    <OuterContext.Provider >
+      <div style={{ background: "blue" }}>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>Click me</button>
+      </div>
+    </OuterContext.Provider>
   );
 }
 
-export default Comp1;
+export { Comp1, OuterContext };
